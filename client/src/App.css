@@ -172,7 +172,7 @@ div.edit-row {
 }
 
 div.post-page a.edit-btn {
-  background-color: #333;
+  /* background-color: #333; */
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -186,12 +186,12 @@ a svg {
   height: 20px;
 }
 
-nav a span{
+nav a {
   text-transform: capitalize;
 }
 
 .navitem:hover{
-  opacity: 0.5;
+  color: #558257;
   transition: 0.3s ease-in-out;
 }
 
@@ -199,21 +199,20 @@ nav a span{
   font-style: italic;
 }
 
-
 body{
   height: 100vh;
   /* background: linear-gradient(#304f6d,#73A1B2); */
-  background-color: #73a1b2;
+  background-color: #558257;
 }
 
 .login button{
-  background-color: #6e8658;
+  background-color: #c73866;
   width: 30%;
   margin: auto auto;
 }
 
 .register button{
-  background-color: #6e8658;
+  background-color: #c73866;
   width: 30%;
   margin: auto auto;
 }
@@ -230,7 +229,8 @@ body{
 }
 
 .register{
-  background-color: #304f6d;
+  background-color: #f5918f;
+  font-weight: lighter;
   width: 30%;
   letter-spacing: 1px;
   color: white;
@@ -239,10 +239,49 @@ body{
 }
 
 .login{
-  background-color: #304f6d;
+  background-color: #f5918f;
+  font-weight: lighter;
   width: 30%;
   letter-spacing: 1px;
   color: white;
   border-radius: 5px;
   padding: 5px 5px;
+}
+
+header{
+  background-color:#f5918f;
+  color: white;
+  padding: 1rem;
+  /* border-radius: 5%; */
+  /* width: 70vw; */
+}
+
+.edit-btn{
+  background-color: #f5918f;
+}
+
+.cae{
+  background-color: #f5918f;
+  width: 30%;
+  margin: auto auto;
+}
+
+.rq{
+  background-color: white;
+}
+
+@media only screen and (max-width: 767px) {
+  /* CSS rules for mobile devices */
+
+  /* Example rule: */
+  body {
+    font-size: 16px;
+  }
+
+  .login{
+    width: 80%;
+  }
+  .register{
+    width: 80%;
+  }
 }

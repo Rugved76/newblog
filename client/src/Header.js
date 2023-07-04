@@ -31,9 +31,9 @@ export default function Header() {
             <nav>
                 {username && (
                     <>
-                        <a> Welcome <span>{username}</span></a>
                         <Link  className="navitem" to="/create">Create</Link>
                         <a className='navitem' onClick={logout}>Logout</a>
+                        <a> {username}</a>
                     </>
                 )}
                 {!username && (
