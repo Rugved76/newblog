@@ -12,6 +12,7 @@ import PostPage from "./pages/PostPage";
 import EditPost from "./pages/EditPost";
 
 function App() {
+  const url = 'http://localhost:4000'
   return (
     <UserContextProvider>
       <Routes>

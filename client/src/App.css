@@ -1,7 +1,7 @@
 
 * {
   box-sizing: border-box;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -191,7 +191,7 @@ nav a {
 }
 
 .navitem:hover{
-  color: #558257;
+  color: #c73866;
   transition: 0.3s ease-in-out;
 }
 
@@ -202,7 +202,7 @@ nav a {
 body{
   height: 100vh;
   /* background: linear-gradient(#304f6d,#73A1B2); */
-  background-color: #558257;
+  background-color: #f6cb9d;
 }
 
 .login button{
@@ -236,6 +236,8 @@ body{
   color: white;
   border-radius: 5px;
   padding: 5px 5px;
+  padding-bottom: 2rem;
+  box-shadow: 10px 15px 10px #c73866;
 }
 
 .login{
@@ -246,12 +248,17 @@ body{
   color: white;
   border-radius: 5px;
   padding: 5px 5px;
+  padding-bottom: 2rem;
+  box-shadow: 10px 15px 10px #c73866;
 }
+
 
 header{
   background-color:#f5918f;
   color: white;
   padding: 1rem;
+  margin: 1.1rem auto;
+  margin-bottom: 3rem;
   /* border-radius: 5%; */
   /* width: 70vw; */
 }
@@ -284,4 +291,37 @@ header{
   .register{
     width: 80%;
   }
+
+  header{
+    width: 90%;
+    /* margin: auto auto; */
+  }
+
+  .thumbnail{
+    width: 60%;
+  }
+  .texts{
+    width: 65%;
+    text-overflow:inherit;
+    /* overflow: hidden; */
+  }
+  .ind{
+    overflow: hidden;
+  }
+}
+
+header{
+  border-radius: 15px;
+}
+
+.thumbnail:hover{
+  /* transform:rotateZ(1deg); */
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+
+.logo:hover{
+  /* transform: scale(1.1); */
+  color: #c73866  ;
+  transition: .3s ease-in-out;
 }

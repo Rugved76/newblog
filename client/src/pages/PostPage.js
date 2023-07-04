@@ -20,10 +20,10 @@ export default function PostPage() {
     if (!postInfo) return '';
 
     return (
-        <div className="post-page">
+        <div style={{backgroundColor:'white',padding:'1rem',borderRadius:'1.5rem'}}className="post-page">
             <h1>{postInfo.title}</h1>
             <time>{formatISO9075(new Date(postInfo.createdAt))}</time>
-            <div className="author">by @{postInfo.author.username}</div>
+            <div style={{color:'grey'}} className="author">by {postInfo.author.username}</div>
             {userInfo.id === postInfo.author._id && (
                 <div className="edit-row">
                     <Link className="edit-btn" to={`/edit/${postInfo._id}`}>
@@ -31,7 +31,7 @@ export default function PostPage() {
                     </Link>
                 </div>
             )}
-            <div className="image">
+            <div style={{width:'90%',margin:'auto'}} className="image">
                 <img src={`http://localhost:4000/${postInfo.cover}`} alt="" />
             </div>
             <div className="content" dangerouslySetInnerHTML={{ __html: postInfo.content }} />

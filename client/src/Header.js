@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
-import './blog.png' 
+// import './blog.png' 
 
 export default function Header() {
     const { setUserInfo, userInfo } = useContext(UserContext);
@@ -31,9 +31,9 @@ export default function Header() {
             <nav>
                 {username && (
                     <>
-                        <Link  className="navitem" to="/create">Create</Link>
+                        <Link  className="navitem" to="/create">Create</Link> |
                         <a className='navitem' onClick={logout}>Logout</a>
-                        <a> {username}</a>
+                        <a style={{backgroundColor:'#c73866',padding:'0 0.5rem 0 0.5rem',borderRadius:'2px'}}> @{username}</a>
                     </>
                 )}
                 {!username && (
