@@ -11,16 +11,17 @@ const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
 
+const CLIENT_URL = 'http://localhost:3000'
 const saltRounds = 10; // Number of salt rounds for bcrypt
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: CLIENT_URL }));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect('mongodb+srv://rugved:1234@clusterx.mc03un9.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-    console.log('Successfully connected to database!')
+    console.log('Successfully connected to database!\n')
 }).catch((e) => {
     console.log(e)
 });
