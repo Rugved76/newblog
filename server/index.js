@@ -27,7 +27,9 @@ mongoose.connect('mongodb+srv://rugved:1234@clusterx.mc03un9.mongodb.net/?retryW
     console.log(e)
 });
 
-
+app.get('/', (req,res)=>{
+    res.send('Server is up and running...');
+});
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
 
