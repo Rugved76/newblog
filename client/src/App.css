@@ -187,7 +187,7 @@ a svg {
 }
 
 nav a {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 
 .navitem:hover{
