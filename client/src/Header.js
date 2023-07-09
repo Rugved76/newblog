@@ -33,7 +33,7 @@ export default function Header() {
                     <>
                         <Link  className="navitem" to="/create">Create</Link> |
                         <a className='navitem' onClick={logout}>Logout</a>
-                        <a style={{backgroundColor:'#c73866',padding:'0 0.5rem 0 0.5rem',borderRadius:'2px'}}> @{username}</a>
+                        <a href="/profile" style={{backgroundColor:'#c73866',padding:'0 0.5rem 0 0.5rem',borderRadius:'2px'}}> @{username}</a>
                     </>
                 )}
                 {!username && (

@@ -11,12 +11,7 @@ const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
 
-<<<<<<< HEAD
 const CLIENT_URL = `http://localhost:3000`
-=======
-// const CLIENT_URL = 'http://localhost:3000'
-const CLIENT_URL = 'https://mernblogg.onrender.com'
->>>>>>> 5616fb20ef3f09c431b04b39a103dae5e87b5757
 const saltRounds = 10; // Number of salt rounds for bcrypt
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 const DB_URL = 'mongodb+srv://rugvedwagh02:rugved76@clusternew.xrsceyc.mongodb.net/?retryWrites=true&w=majority'
@@ -32,16 +27,10 @@ mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).th
     console.log(e)
 });
 
-<<<<<<< HEAD
 app.get('/',(req,res)=>{
     res.send('Server is up and running...')    
 })
 
-=======
-app.get('/', (req,res)=>{
-    res.send('Server is up and running...');
-});
->>>>>>> 5616fb20ef3f09c431b04b39a103dae5e87b5757
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
 
@@ -105,7 +94,8 @@ app.get('/profile', (req, res) => {
     const { token } = req.cookies;
     jwt.verify(token, secret, {}, (err, info) => {
         if (err) throw err;
-        res.json(info);
+        // res.json(info);
+        console.log(info)
     });
 });
 
@@ -189,7 +179,3 @@ app.get('/post/:id', async (req, res) => {
 app.listen(4000, () => {
     console.log('Server listening at port 4000')
 });
-<<<<<<< HEAD
-=======
-//
->>>>>>> 5616fb20ef3f09c431b04b39a103dae5e87b5757
