@@ -288,23 +288,25 @@ header{
   .login{
     width: 80%;
   }
+
   .register{
     width: 80%;
   }
-
+  
   header{
-    width: 90%;
+    width: 100%;
     /* margin: auto auto; */
   }
 
   .thumbnail{
     width: 60%;
   }
+
   .texts{
     width: 65%;
     text-overflow:inherit;
-    /* overflow: hidden; */
   }
+  
   .ind{
     overflow: hidden;
   }

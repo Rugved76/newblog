@@ -31,7 +31,7 @@ mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 );
 
 app.get('/', (req, res) => {
-    res.send('Server is up and running...')
+    res.status(200).json('Server is up and running...')
 })
 
 app.post('/register', async (req, res) => {
@@ -77,7 +77,7 @@ app.post('/login', async (req, res) => {
                 secret,
                 { expiresIn: '24h' }
             );
-
+            // res.header('Access-Control-Allow-Origin','https://dashboard.render.com')
             // Set the JWT as a cookie and send the user details in the response
             res.cookie('token', token).json({
                 id: userDoc._id,

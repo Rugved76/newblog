@@ -5,6 +5,7 @@ import { url } from "../App";
 
 export default function Header() {
     const { setUserInfo, userInfo } = useContext(UserContext);
+    
     useEffect(() => {
         fetch(`${url}/profile`, {
             credentials: 'include',
