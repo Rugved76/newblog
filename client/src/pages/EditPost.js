@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+ import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
-import Editor from "../Editor";
+import Editor from "../components/Editor";
 import { url } from "../App";
 
 export default function EditPost() {

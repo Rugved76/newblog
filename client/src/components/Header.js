@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
-import { url } from "./App";
+import { url } from "../App";
 
 export default function Header() {
     const { setUserInfo, userInfo } = useContext(UserContext);
@@ -12,7 +12,7 @@ export default function Header() {
             response.json().then(userInfo => {
                 setUserInfo(userInfo);
             });
-        });
+        }); 
     }, []);
 
     function logout() {
@@ -27,13 +27,13 @@ export default function Header() {
 
     return (
         <header>
-            <Link to="/" className="logo">Blog</Link>
+            <Link to="/" className="logo">Blogsy</Link>
             <nav>
                 {username && (
                     <>
-                        <Link  className="navitem" to="/create">Create</Link> |
+                        <Link className="navitem" to="/create">Create</Link> |
                         <a className='navitem' onClick={logout}>Logout</a>
-                        <a href="/profile" style={{backgroundColor:'#c73866',padding:'0 0.5rem 0 0.5rem',borderRadius:'2px'}}> @{username}</a>
+                        <a href="/profile" style={{ backgroundColor: '#c73866', padding: '0 0.5rem 0 0.5rem', borderRadius: '2px' }}> @{username}</a>
                     </>
                 )}
                 {!username && (

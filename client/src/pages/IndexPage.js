@@ -1,22 +1,28 @@
-import Post from "../Post";
+import Post from "../components/Post";
 import { useEffect, useState } from "react";
 import { url } from "../App";
+import axios from 'axios'
 
 export default function IndexPage() {
 
-  const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    fetch(`${url}/post`).then(response => {
-      response.json().then(posts => {
-        setPosts(posts);
-      });
-    });
-  }, []);
+    const fetchPosts = async () => {
+        try {
+            const response = await axios.get(`${url}/post`)
+            setPosts(response.data);
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
-  return (
-    <div className="ind">
-      {posts.length > 0 && posts.map(post => (<Post {...post} />))}
-    </div>
-  );
+    useEffect(() => {
+        fetchPosts();
+    }, []);
+
+    return (
+        <div className="ind">
+            {posts.length > 0 && posts.map(post => (<Post {...post} />))}
+        </div>
+    );
 }

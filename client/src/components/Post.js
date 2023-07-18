@@ -1,6 +1,6 @@
 import { formatISO9075 } from "date-fns";
 import { Link } from "react-router-dom";
-import { url } from "./App";
+import { url } from "../App";
 
 export default function Post({ _id, title, summary, cover, content, createdAt, author }) {
 
@@ -21,7 +21,7 @@ export default function Post({ _id, title, summary, cover, content, createdAt, a
                 </p>
                 <p className="summary" style={{ color: '#d5504d' }}>{summary}</p>
             </div>
-            <div style={{color:'#d5504d'}}>_________________________________________________________</div>
+            <div style={{ color: '#d5504d' }}>_________________________________________________________</div>
         </div>
     );
 }
