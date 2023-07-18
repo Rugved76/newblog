@@ -21,14 +21,16 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-    console.log('Successfully connected to database!\n')
-}).catch((e) => {
-    console.log(e)
-});
+mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('Successfully connected to database!\n')
+    }).catch((e) => {
+        console.log(e)
+    }
+);
 
-app.get('/',(req,res)=>{
-    res.send('Server is up and running...')    
+app.get('/', (req, res) => {
+    res.send('Server is up and running...')
 })
 
 app.post('/register', async (req, res) => {
@@ -173,7 +175,7 @@ app.get('/post', async (req, res) => {
 app.get('/post/:id', async (req, res) => {
     const { id } = req.params;
     const postDoc = await Post.findById(id).populate('author', ['username']);
-    res.json(postDoc);
+    res.status(200).json(postDoc);
 })
 
 app.listen(4000, () => {
