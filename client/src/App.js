@@ -12,8 +12,8 @@ import PostPage from "./pages/PostPage";
 import EditPost from "./pages/EditPost";
 import Profile from './pages/Profile';
 
-// export const url = `http://localhost:4000`
-export const url = `https://mernblogback-sxe3.onrender.com`
+export const url = `http://localhost:4000`
+// export const url = `https://mernblogback-sxe3.onrender.com`
 
 function App() {
   return (
