@@ -77,6 +77,7 @@ app.post('/login', async (req, res) => {
                 secret,
                 { expiresIn: '24h' }
             );
+            res.header('Access-Control-Allow-Origin','https://dashboard.render.com')
 
             // Set the JWT as a cookie and send the user details in the response
             res.cookie('token', token).json({
