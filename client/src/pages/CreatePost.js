@@ -10,7 +10,7 @@ export default function CreatePost() {
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
-  const [files, setFiles] = useState('');
+  // const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
 
   async function createNewPost(ev) {
@@ -20,7 +20,7 @@ export default function CreatePost() {
     data.set('title', title);
     data.set('summary', summary);
     data.set('content', content);
-    data.set('file', files[0]);
+    // data.set('file', files[0]);
 
     ev.preventDefault();
     try{
@@ -54,8 +54,8 @@ export default function CreatePost() {
         placeholder={'Summary'}
         value={summary}
         onChange={ev => setSummary(ev.target.value)} />
-      <input type="file"
-        onChange={ev => setFiles(ev.target.files)} />
+      // <input type="file"
+      //   onChange={ev => setFiles(ev.target.files)} />
       <Editor value={content} onChange={setContent} />
       <button className="cae" style={{ marginTop: '5px' }}>Create post</button>
     </form>
