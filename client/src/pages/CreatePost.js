@@ -50,10 +50,10 @@ export default function CreatePost() {
         placeholder={'Title'}
         value={title}
         onChange={ev => setTitle(ev.target.value)} />
-      <input type="summary"
-        placeholder={'Summary'}
-        value={summary}
-        onChange={ev => setSummary(ev.target.value)} />
+      // <input type="summary"
+      //   placeholder={'Summary'}
+      //   value={summary}
+      //   onChange={ev => setSummary(ev.target.value)} />
       // <input type="file"
       //   onChange={ev => setFiles(ev.target.files)} />
       <Editor value={content} onChange={setContent} />
