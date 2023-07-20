@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Editor from "../components/Editor";
 import { url } from '../App';
+import axios from 'axios'
 
 export default function CreatePost() {
 
