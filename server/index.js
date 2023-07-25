@@ -11,7 +11,7 @@ const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
 
-const CLIENT_URL = `http://localhost:3000`
+const CLIENT_URL = `https://newnotes-7z7c.onrender.com`
 // const CLIENT_URL = 'https://blogsy.onrender.com'
 const saltRounds = 10; // Number of salt rounds for bcrypt
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
