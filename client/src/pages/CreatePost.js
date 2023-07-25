@@ -73,7 +73,7 @@ export default function CreatePost() {
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
-  // const [files, setFiles] = useState('');
+  const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
 
   async function createNewPost(ev) {
@@ -83,7 +83,7 @@ export default function CreatePost() {
     data.set('title', title);
     data.set('summary', summary);
     data.set('content', content);
-    // data.set('file', files[0]);
+    data.set('file', files[0]);
 
     ev.preventDefault();
     // try{
