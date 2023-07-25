@@ -37,9 +37,9 @@ export default function PostPage() {
                     </Link>
                 </div>
             )}
-            <div style={{width:'90%',margin:'auto',background:'cover'}} className="image">
+            {/* <div style={{width:'90%',margin:'auto',background:'cover'}} className="image">
                 <img src={`${url}/${postInfo.cover}`} alt="" />
-            </div>
+            </div> */}
             <div className="content" dangerouslySetInnerHTML={{ __html: postInfo.content }} />
         </div>
     );

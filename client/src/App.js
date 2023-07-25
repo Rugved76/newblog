@@ -12,8 +12,8 @@ import PostPage from "./pages/PostPage";
 import EditPost from "./pages/EditPost";
 import Profile from './pages/Profile';
 
-// export const url = `http://localhost:4000`
-export const url = `https://serverblog-8wra.onrender.com`
+export const url = `http://localhost:4000`
+// export const url = `https://serverblog-8wra.onrender.com`
 
 function App() {
   return (

@@ -1,4 +1,4 @@
- import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Editor from "../components/Editor";
 import { url } from "../App";
@@ -20,7 +20,7 @@ export default function EditPost() {
                     setSummary(postInfo.summary);
                 });
             });
-    }, [id]);
+    }, []);
 
     async function updatePost(ev) {
         ev.preventDefault();
@@ -56,8 +56,8 @@ export default function EditPost() {
                 placeholder={'Summary'}
                 value={summary}
                 onChange={ev => setSummary(ev.target.value)} />
-            <input type="file"
-                onChange={ev => setFiles(ev.target.files)} />
+            {/* <input type="file"
+                onChange={ev => setFiles(ev.target.files)} /> */}
             <Editor onChange={setContent} value={content} />
             <button className="cae" style={{ marginTop: '5px' }}>Update </button>
         </form>

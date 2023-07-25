@@ -11,8 +11,8 @@ const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
 
-// const CLIENT_URL = `http://localhost:3000`
-const CLIENT_URL = 'https://blogsy.onrender.com'
+const CLIENT_URL = `http://localhost:3000`
+// const CLIENT_URL = 'https://blogsy.onrender.com'
 const saltRounds = 10; // Number of salt rounds for bcrypt
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 const DB_URL = 'mongodb+srv://rugvedwagh02:rugved76@clusternew.xrsceyc.mongodb.net/?retryWrites=true&w=majority'
@@ -107,11 +107,11 @@ app.post('/logout', (req, res) => {
 });
 
 app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
-    const { originalname, path } = req.file;
-    const parts = originalname.split('.');
-    const ext = parts[parts.length - 1];
-    const newPath = path + '.' + ext;
-    fs.renameSync(path, newPath);
+    // const { originalname, path } = req.file;
+    // const parts = originalname.split('.');
+    // const ext = parts[parts.length - 1];
+    // const newPath = path + '.' + ext;
+    // fs.renameSync(path, newPath);
 
     const { token } = req.cookies;
     jwt.verify(token, secret, {}, async (err, info) => {
@@ -121,7 +121,7 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
             title,
             summary,
             content,
-            cover: newPath,
+            // cover: newPath,
             author: info.id,
         });
         res.json(postDoc);
@@ -132,13 +132,13 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
 
 app.put('/post', uploadMiddleware.single('file'), async (req, res) => {
     let newPath = null;
-    if (req.file) {
-        const { originalname, path } = req.file;
-        const parts = originalname.split('.');
-        const ext = parts[parts.length - 1];
-        newPath = path + '.' + ext;
-        fs.renameSync(path, newPath);
-    }
+    // if (req.file) {
+    //     const { originalname, path } = req.file;
+    //     const parts = originalname.split('.');
+    //     const ext = parts[parts.length - 1];
+    //     newPath = path + '.' + ext;
+    //     fs.renameSync(path, newPath);
+    // }
 
     const { token } = req.cookies;
     jwt.verify(token, secret, {}, async (err, info) => {
@@ -153,7 +153,7 @@ app.put('/post', uploadMiddleware.single('file'), async (req, res) => {
             postDoc.title = title;
             postDoc.summary = summary;
             postDoc.content = content;
-            postDoc.cover = newPath ? newPath : postDoc.cover;
+            // postDoc.cover = newPath ? newPath : postDoc.cover;
             await postDoc.save();
             res.json(postDoc);
             console.log('Post Updated!')
